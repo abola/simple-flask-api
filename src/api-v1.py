@@ -1,6 +1,7 @@
 import functools
 import random
 import math
+import time
 
 from flask import Flask, request, jsonify, abort
 from waitress import serve
@@ -11,10 +12,14 @@ app = Flask(__name__)
 @app.route('/api/v1.0/show/version', methods=['GET'])
 def show_version():
   return '1.0'
-
+  
 @app.route('/api/v1.0/add/cpu_load', methods=['GET'])
 def cpu_load():
   return 'pi: {}'.format(easy_pi())
+
+@app.route('/healthly', method=['GET'])
+def healthly:
+  pass
 
 def map_d(c):
   return math.hypot(random.random(), random.random())
@@ -29,6 +34,9 @@ def easy_pi():
   d_list = map(map_d, range(0, count))
   count_inside = functools.reduce(reduce_d, d_list)
   return 4.0 * count_inside / count
+
+# add raondom sleep time(1-10) before serve 
+time.sleep(int(random.random()*10)+1)
 
 # run Flask Restful service
 serve(app, port=3000, host='0.0.0.0')
