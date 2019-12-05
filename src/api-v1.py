@@ -24,7 +24,7 @@ def cpu_load():
   return 'pi: {}'.format(easy_pi())
 
 @app.route('/health', method=['GET'])
-def health:
+def health():
   pass
 
 def map_d(c):
