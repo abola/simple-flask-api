@@ -23,7 +23,7 @@ def show_pod_name():
 def cpu_load():
   return 'pi: {}'.format(easy_pi())
 
-@app.route('/health', method=['GET'])
+@app.route('/health', methods=['GET'])
 def health():
   pass
 
