@@ -1,6 +1,7 @@
 import functools
-import random
 import math
+import os
+import random
 import time
 
 from flask import Flask, request, jsonify, abort
@@ -12,7 +13,12 @@ app = Flask(__name__)
 @app.route('/api/v1.0/show/version', methods=['GET'])
 def show_version():
   return '1.0'
-  
+
+@app.route('/api/v1.0/show/pod_name', methods=['GET'])
+def show_pod_name():
+  return os.getenv('HOSTNAME')
+
+
 @app.route('/api/v1.0/add/cpu_load', methods=['GET'])
 def cpu_load():
   return 'pi: {}'.format(easy_pi())
