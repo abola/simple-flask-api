@@ -25,7 +25,7 @@ def cpu_load():
 
 @app.route('/health', methods=['GET'])
 def health():
-  pass
+  return 'ok', 200
 
 def map_d(c):
   return math.hypot(random.random(), random.random())
