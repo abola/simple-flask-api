@@ -17,8 +17,8 @@ def show_version():
 def cpu_load():
   return 'pi: {}'.format(easy_pi())
 
-@app.route('/healthly', method=['GET'])
-def healthly:
+@app.route('/health', method=['GET'])
+def health:
   pass
 
 def map_d(c):
