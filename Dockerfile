@@ -7,4 +7,4 @@ COPY . /opt/flask
 RUN pip install -r requirements.txt && \
     touch /alive
 
-ENTRYPOINT ["python", "src/api.py"]
+ENTRYPOINT ["python", "src/api-v1.py"]
