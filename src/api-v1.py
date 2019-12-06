@@ -36,7 +36,7 @@ def reduce_d(count_inside, d):
   return count_inside
 
 def easy_pi():
-  count = 1024*512
+  count = 1024*128
   d_list = map(map_d, range(0, count))
   count_inside = functools.reduce(reduce_d, d_list)
   return 4.0 * count_inside / count
