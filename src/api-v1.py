@@ -41,8 +41,8 @@ def easy_pi():
   count_inside = functools.reduce(reduce_d, d_list)
   return 4.0 * count_inside / count
 
-# add raondom sleep time(1-10) before serve 
-time.sleep(int(random.random()*10)+1)
+# add raondom sleep time(1-30) before serve 
+time.sleep(int(random.random()*30)+1)
 
 # run Flask Restful service
 serve(app, port=3000, host='0.0.0.0')
