@@ -27,6 +27,12 @@ def cpu_load():
 def health():
   return 'ok', 200
 
+
+@app.route('/show_headers', methods=['GET'])
+def show_headers():
+  print request.headers
+  return 'ok', 200
+
 def map_d(c):
   return math.hypot(random.random(), random.random())
 
